@@ -1,0 +1,55 @@
+/* /static/css/global.css */
+
+page {
+  background-color: #F5FAFE;
+  color: #111827;
+}
+
+/* 统一主色（图2色值） */
+:root {
+  --primary: #2AADA5;
+  --primary-weak: rgba(42,173,165,0.14);
+  --primary-border: rgba(42,173,165,0.55);
+}
+
+.text-primary { color: var(--primary); }
+.bg-primary { background-color: var(--primary); }
+.border-primary { border-color: var(--primary); }
+
+/* 常用按钮 */
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 900;
+  border-radius: 18rpx;
+}
+.btn-primary-outline {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid rgba(42,173,165,0.9);
+  font-weight: 900;
+  border-radius: 18rpx;
+}
+
+/* ✅✅✅ H5（浏览器）专用：限制最大宽度，避免 rpx 随窗口变大导致布局“炸掉” */
+@media screen and (min-width: 500px) {
+  /* uni-app H5 的页面容器一般是 uni-page-body / uni-page-wrapper */
+  html, body {
+    background: #F5FAFE;
+  }
+
+  /* 让所有页面主体居中并限制最大宽度 */
+  uni-page-body,
+  uni-page-wrapper,
+  page {
+    max-width: 430px;      /* 你也可以改成 375 / 414 / 450 */
+    margin-left: auto;
+    margin-right: auto;
+    background: #F5FAFE;
+  }
+
+  /* 防止某些容器被撑开 */
+  uni-view, uni-text, uni-image {
+    box-sizing: border-box;
+  }
+}
